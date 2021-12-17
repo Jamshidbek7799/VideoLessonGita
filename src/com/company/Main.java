@@ -3,25 +3,23 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
+//   ProKING
     public static void main(String[] args) {
-	// kVADRAT TENGLAMA
+
         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
 
-        System.out.println("a son: ");
-        int a = sc.nextInt();
-        System.out.println("b son: ");
-        int b = sc.nextInt();
-        System.out.println("c son: ");
-        int c = sc.nextInt();
+        int[] a =new int[n];
+        for (int i = 0; i <n ; i++) {
+            a[i]=sc.nextInt();
+        }
 
-        int D = b*b - 4*a*c;
-        System.out.println("D = "+D);
+        System.out.println("index = qiymati");
+        for (int i = 1; i <=a.length-1 ; i+=2) {
+            System.out.println("  "+i+ "   =   "+a[i]);
+        }
 
-        int x1 = (int) ((-b-Math.sqrt(D))/(2*a));
-        System.out.println("X1 = "+x1);
 
-        int x2 = (int) ((-b+Math.sqrt(D))/(2*a));
-        System.out.println("X2 = "+x2);
+
     }
 }
