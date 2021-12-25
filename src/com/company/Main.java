@@ -1,25 +1,41 @@
 package com.company;
 
+
 import java.util.Scanner;
 
 public class Main {
-//   ProKING
+//   T/me:@JamshidYuldashev
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int[] a =new int[n];
-        for (int i = 0; i <n ; i++) {
-            a[i]=sc.nextInt();
+        int []arr = new int[n];
+        for (int i = 0; i <arr.length ; i++) { // massiv elementlarini o'qib olish
+            arr[i]=sc.nextInt();
         }
 
-        System.out.println("index = qiymati");
-        for (int i = 1; i <=a.length-1 ; i+=2) {
-            System.out.println("  "+i+ "   =   "+a[i]);
-        }
-
+        int max = maxOfArray(arr, 0);
+        System.out.println(max);
 
 
     }
+
+    // rekursiv funksiya
+    public static int maxOfArray(int []arr, int index){
+
+        if (index == arr.length - 1){
+            return arr[index];
+        }
+
+        int maxInSmollerArray = maxOfArray(arr, index + 1);
+        if (maxInSmollerArray> arr[index]){
+            return maxInSmollerArray;
+        }else {
+            return arr[index];
+        }
+    }
+
+
+
 }
